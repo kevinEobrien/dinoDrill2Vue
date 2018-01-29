@@ -1,5 +1,9 @@
 # dinovue2
 
+Deployed Link
+https://dinovue2.firebaseapp.com/
+
+
 > A Vue.js project
 
 ## Build Setup
