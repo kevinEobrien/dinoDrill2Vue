@@ -1,20 +1,15 @@
 <template>
-    <section id="profiles-container">
-        <h2>Profiles</h2>
-        <ul v-for="dino in dinos" id="profiles">
-            <li>
-                <div class="profile-card" @click="skillsToggle = !skillsToggle">
-                    <header class="profile-header">
-                        <img v-bind:src="dino.image" />
-                        <h2>{{dino.name}}</h2>
-                    </header>
-                    <section class = skills-container :class="{ hidden : skillsToggle }">
+        <li>
+            <div class="profile-card" >
+                <header class="profile-header" @click="skillsToggle = !skillsToggle">
+                    <img v-bind:src="dino.image" />
+                    <h2>{{dino.name}}</h2>
+                </header>
+                <section class = skills-container :class="{ hidden : skillsToggle }">
                     <SkillList :skills="dino.skills"/>
-                    </section>
-                </div>
+                </section>
+            </div>
         </li>
-    </ul>
-    </section>
 </template>
 <script>
 import SkillList from "./SkillList"
@@ -22,7 +17,7 @@ export default {
   name: "Profiles",
 components:{SkillList
     },
-props:["dinos", "skills"]
+props:["dino"]
 , 
 methods:{
     unhide(){
@@ -44,9 +39,7 @@ methods:{
   padding: 10px;
   /* margin: 0 auto 10px auto; */
 }
-h2{
-    text-align:start;
-}
+
 
 .profile-header {
   display: flex;

@@ -2,7 +2,12 @@
   <div id="app">
     <TheHeader/>
     <main>
-    <Profiles :dinos="listingData" :skills="skillsData"/>
+      <section id="profiles-container">
+      <h2>Profiles</h2>
+      <ul id="profiles">
+        <Profiles v-for="dino in listingData" id="profiles":dino="dino" />
+      </ul>
+      </section>
     </main>
     <TheFooter/>
   </div>
@@ -59,18 +64,27 @@ html {
   font-family: sans-serif;
   color: #1B997A;
   display: grid;
-  /* grid-template-rows: 15% 75% 10%; */
+  grid-template-rows: 15% 75% 10%;
   grid-row: 2/3;
 }
 
-section {
+#profiles-container {
+  padding: 0 20px 0 20px;
+  display: grid;
+  grid-template-columns:repeat(auto-fit, x100%);
+  grid-gap: 10px;
+  margin: 0 auto;
+  width: 50%;
+}
+
+/* section {
   padding: 0 20px 0 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, x100%);
   grid-gap: 10px;
   margin: 0 auto;
   width: 50%;
-}
+} */
 
 small {
   color: black;

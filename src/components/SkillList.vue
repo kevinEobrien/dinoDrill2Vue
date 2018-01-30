@@ -1,8 +1,8 @@
 <template>
     <section class="skills-container">
         <h4>Skills</h4>
-            <ul v-for="skill in skills" class="skills-list">
-                <li>{{skill}}</li>
+            <ul class="skills-list">
+                <li v-for="skill in skills"> {{skill}}</li>
             </ul>
     </section>
 </template>
